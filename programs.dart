@@ -256,12 +256,17 @@ main() {
 
 // program 18
 
-  print("Enter your letters.");
-  var character = "a";
-
   // program to print the next two variables
-  print("${character} $character+1");
-  print("${character} $character+2");
+
+  print("Enter your letters.");
+  final ch = "a";
+  // Get the ASCII code
+  final asciiCode = ch.codeUnitAt(0);
+// increament to the ascii code we got
+  final asciiCodeInc = asciiCode + 1;
+  final nextCharOne = String.fromCharCode(asciiCodeInc);
+
+  print(nextCharOne);
 
 // OUTPUT NO WORKING ERROR
 
