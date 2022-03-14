@@ -1,478 +1,274 @@
-// Program : 1
-
 import 'dart:io';
 
-import 'dart:math';
+void main() {
+  // program : 1
 
-main() {
-  // print("Enter the radius");
-  stdout.write("Enter the radius");
-  final radiusInStr = stdin.readLineSync();
-  double radius = double.parse(radiusInStr!);
-  double area = 4 * 3.14 * (radius * radius);
-  print("Area is equal to $area");
-  double cir = (4.0 / 3.0) * 3.14 * radius * radius * radius;
-  print("Circumference is $cir");
+  // program that input the user's number of the subject and the check whether he is passed or not
 
-// Program  2
+  stdout.write("Enter Your Marks below.\n");
+  String? userMarks = stdin.readLineSync()!;
+  // parsing
+  int marks = int.parse(userMarks);
+  // condition
+  if (marks >= 40) {
+    stdout.write("Congress!  $marks Marks : You have passed.\n");
+  } else {
+    stdout.write("Ops! You have failed.\n");
+  }
+  // OUTPUT : you  haved passed.
 
-  // program to input the miles and convert it into kilometers
-  int miles;
-  miles = 40;
-  double kilo = 1.609 * miles;
-  print("miles : $miles \nkilo $kilo");
-  // OUTPUT :  64.36 KILOMETERS
+  // program : 2
 
-// Program  3
+  // program that input the numbers and check whether they equal to each or not
+  stdout.write("Enter Two number here... \n");
+  // get the number 1
+  String? num1Str = stdin.readLineSync()!;
+  stdout.write("Enter Second number please... \n");
+  // get other
+  String? num2Str = stdin.readLineSync()!;
+  // Parsing to the integer
+  int num1 = int.parse(num1Str);
+  int num2 = int.parse(num2Str);
+  // if condition that is it equal or not
+  if (num1 == num2) {
+    stdout.write("Congress!  $num1 and $num2 are equal to each other.\n");
+  } else {
+    stdout
+        .write("Ops! The numbers are not equal to each other.\n Program Exit.");
+  }
+  // OUTPUT : Congress! 5 and 5 are equal to each other
 
-// PROGRAM that input the some numbers and print its addition and multiplication
+  // program : 3
 
-  final no1, no2, no3, no4, sum, product;
-  no1 = 5;
-  no2 = 6;
-  no3 = 9;
-  no4 = 56;
-  // ADDITION
-  sum = no1 + no2 + no3 + no4;
-  // PRODUCT
-  product = no1 * no2 * no3 * no4;
-  print("Sum of the four numbers : $sum");
-  //OUTPUT : Sum of the four numbers : 76
+  // Program that input the salary and output the salary
+  stdout.write("Enter Your salary here... \n");
+  // Get the string by the function stdin.readLineSync
+  String? salary = stdin.readLineSync()!;
+  // assert != null
+  if (double.tryParse(salary) == null) {
+    print("Invalid input ");
+  }
+  // parse the salary
+  double yourSalary = double.parse(salary);
+  print("YOur salary is $salary");
+// YOUR salary is 70000.0
 
-  print("Product of the four numbers : $product");
-  // OUTPUT : Product of the four numbers : 15120
+  // program : 4
 
-// PROGRAM 4 :
+  // program that input the marks 3 subjects marks and get the average and out put it
+  stdout.write("Enter the marks of your three subjects... \n");
+  // user's english marks are >>>>
+  String? englishInStr = stdin.readLineSync()!;
+  // Urdu marks
+  stdout.write("Enter Second subject numbers please... \n");
+  String? urduInStr = stdin.readLineSync()!;
+  stdout.write("Enter Third subject numbers please... \n");
+  String? mathInStr = stdin.readLineSync()!;
+  // parsing the marks to integer value
+  int number1 = int.parse(englishInStr);
+  int number2 = int.parse(urduInStr);
+  int number3 = int.parse(mathInStr);
+  // get the average marks of the user below...
 
-  // PROGRAM that input the age in yeat and print it into months and days
-  final age, months, days;
-  // age in year
-  age = 18;
-  //converting the age into months
-  months = age * 12;
-  //converting the age into days
-  days = age * 365;
-  print("Age in months : $months");
-// OUTPUT age in month : 216
-  print("Age in days : $days");
-// OUTPUT age in days : 6570
+  final average = (number1 + number2 + number3) / 3.0;
+  print("Your average marks are $average");
 
-// program 5
+  // OUTPUT : Your average marks are
+  //Enter the marks of your three subjects...
+// 56
+// Enter Second subject numbers please...
+// 56
+// Enter Third subject numbers please...
+// 56
+// Your average marks are 56.0
 
-  // Program that input the number and output ites square and cube
-  print("Enter your number.");
-  final a = 5;
-  // In sqaure
-  final square = a * a;
-  // In cube
-  final cube = a * a * a;
+  // program : 5
 
-  print("Your number's square is : $square");
-  print("Your number's cube is : $cube");
-// OUTPUT :
-// Enter your number.
-// Your number's square is : 25
-// Your number's cube is : 125
+  // program that input the number and check which is the maximum number in it
+  stdout.write("Enter the three numbers here... \n");
+  // Get the string by the function stdin.readLineSync
+  String? number_1 = stdin.readLineSync()!;
+  String? number_2 = stdin.readLineSync()!;
+  String? number_3 = stdin.readLineSync()!;
+// parsing to the interger value
+  int firstNumber = int.parse(number_1);
+  int secondNumber = int.parse(number_2);
+  int thirdNumber = int.parse(number_3);
+  // Check max number
+  // swap the max  = firstNumber
+  int max = firstNumber;
+  if (secondNumber > max) {
+    max = secondNumber;
+  }
+  max = secondNumber;
+  if (thirdNumber > max) {
+    max = thirdNumber;
+  }
+  print("The max number is $max");
 
-// program 6
+// The max number is 90
 
-  void main() {
-    //The program output you the total pages you read and remaining pages of your book to read
-    print("Enter your book's total pages");
-// Init... pages
-    final pages = 300;
-    print("How many pages you learn daily");
-// You read Page per day
-    final pagesDaily = 4;
-    print("How many days you read the book");
-    final days = 15;
-// The logic for calculate the completed pages you read below
-    final completed = days * pagesDaily;
-// The logic for calculate the remaining pages below
-    final remaining = pages - completed;
+  // program : 6
 
-    print("You have read $completed pages ");
-// You have read 60  pages
-    print("Remaining pages are $remaining");
-// Remaining pages are 240
+  // Program that input the number and check it is positive or not.
+  stdout.write("Enter the number here... \n");
+  // Get the string by the function stdin.readLineSync
+  String? numberInStr = stdin.readLineSync()!;
+
+  // parse the number
+  double number = double.parse(numberInStr);
+//check the number is greater than 0 or not
+  if (number > 0) {
+    print("The number is positive $number");
+  } else {
+    print("The number is negative $number");
   }
 
-// program 7
+// The number is positve 5
 
-  // the program to find the distance in specific liters petrol
-  print("Enter the petrol in liters.");
-  final liters = 2;
-  final distance = liters * 5.3;
-  print("Car can cover $distance miles in $liters liters");
-  // Car can cover 10.6 miles in 2 liters
+  // program : 7
 
-// program 8
-  // The program to check the total fee of the students total student of the class
-
-  print("Enter Total student ");
-  final totalStudents = 50;
-  print("Enter fee per student ");
-  final fee = 3000;
-  final total = totalStudents * fee;
-  print("Total fee : $total");
-  // OUTPUT : Total fee 150,000
-
-// program 9
-  // PRogram to convert the farenheit temperraute to celcius
-
-  final cel, fahrenheit;
-  print("Enter the temperature in fahrenheit ");
-  fahrenheit = 40;
-  cel = (fahrenheit - 32.0) * 5.0 / 9.0;
-  print("Temperature in celcius is $cel");
-
-// OUTPUT : Temperatute in celcius is 4.444444444445
-// program 10
-// Program to print the numbers in column
-  final number1, number2, number3, display;
-  print("Enter the 3 numbers Below:");
-  number1 = 40;
-  number2 = 30;
-  number3 = 90;
-  print("$number1\n$number2\n$number3");
-  // Output :
-  //10
-  //30
-  //50
-
-// program 11
-
-  // the program to use the print statement to print the output in this form
-  // 1 2 3 4 5
-
-  //6 7 8 9 10
-  print("1 2 3 4 5 \n 6 7 8 9 10");
-  //output
-
-  // 1 2 3 4 5
-  //6 7 8 9 10
-
-// program 12
-
-  // Program to calculate the voulume V of the cube by taking measures from the user
-  final length, width, height, volume;
-  print("Enter the length");
-  length = 5;
-  print("Enter the width");
-  width = 50;
-  print("Enter the height");
-  height = 80;
-
-  // formula to find the volume below
-
-  volume = length * width * height;
-  print("Volume of the cube : $volume");
-  //OUTPUT : Volune of the cube is 20000
-
-// program 13
-
-  // program  to swap the values of  threee variables with using
-
-  // getting the three numbers by the user
-  // and swap it with d
-
-  var x, y, z;
-  x = 4;
-  y = 3;
-  z = 6;
-  print("Previous Values are :  ");
-
-  print("x = $x : y = $y : z = $z");
-// Now we are swapping the values
-// x= 4
-
-  x = x + y + z;
-  // 4 = 4 + 3 + 6
-  y = x - (y + z);
-  // y  13 - (3+6)
-  z = x - (y + z);
-
-  x = x - (y + z);
-
-  print("New values are : \n");
-  print("x :  $x \n y : $y \n z : $z");
-// OUTPUT :
-//x = 6
-//y = 4
-//z = 3
-
-// program 14
-
-  // program to print the arc length of the convex lsens
-
+  // Program that input the number and check it is even or odd.
   {
-    final length, radius, angle;
-    print("Enter the radius ");
-    radius = 5;
-    print("Enter the angle");
-    angle = 90;
-    length = radius * angle;
-    print("Length : $length");
-  }
-  //OUTPUT : 450 the arc of length of a convex lens
+    stdout.write("Enter the number here... \n");
+    // Get the string by the function stdin.readLineSync
+    String? numberInStr = stdin.readLineSync()!;
 
-// program 15
-
-  // program converts the pounds to kilogram
-  final pounds, kilogram;
-  print("Enter the number of pounds ");
-  pounds = 4;
-  kilogram = pounds / 2.205;
-  print("$pounds : pounds , $kilogram : kilogram");
-  //OUTPUT : 4 pounds and 1.914 kilogram
-
-// program 16
-
-  // program to find the area of the sector of the circle when the theta is the andgle of the radian between radii
-
-  {
-    var theta, radius, area;
-    print("Enter RADIUDS: ");
-    radius = 5;
-    print("Enter the length of radii and angle in radian between them : ");
-    theta = 90;
-    print("Theta is $theta");
-    area = radius * radius * theta / 2.0;
-    print("The area of sector is : $area ");
-  }
-
-// OUTPUT: THE AREA OF SECTOR IS
-
-// program 17
-
-  // program that reads a postive number and then computes the loagrithm of that value to the base 2
-
-  final number, answer;
-  print("Enter the postive number");
-  number = 4;
-  answer = log(number) / log(2.0);
-  print("The logarithum of $number to the base 2 is $answer");
-  // OUTPUT : Dart not supported the log
-
-// program 18
-
-  // program to print the next two variables
-
-  print("Enter your letters.");
-  final ch = "a";
-  // Get the ASCII code
-  final asciiCode = ch.codeUnitAt(0);
-// increament to the ascii code we got
-  final asciiCodeInc = asciiCode + 1;
-  final nextCharOne = String.fromCharCode(asciiCodeInc);
-
-  print(nextCharOne);
-
-// OUTPUT NO WORKING ERROR
-
-// program 19
-
-  // The program get the basic salary of the user and output it its gross salary
-  final basic, gross;
-  print("Enter your basic salary");
-  basic = 50000;
-  gross = basic + (0.35 * basic) + (0.25 * basic);
-  print("Your gross salary is : $gross");
-// OUTPUT : Your gross salary is : 80000.0
-
-// program 20
-
-  //program :  Enter the times in this format first Time 1 , Time 2 , Min 1 , Min 2 , Second 1 , Second 3
-  var time1,
-      time2,
-      timeTotal,
-      min1,
-      min2,
-      minTotal,
-      second1,
-      second2,
-      secondTotal;
-
-  // initializing the variables values
-  time1 = 10;
-  time2 = 40;
-  second1 = 45;
-  second2 = 60;
-  min1 = 4;
-  min2 = 45;
-
-  //for getting the total Seconds we have:
-
-  secondTotal = second1 + second2;
-  //for getting the total Minutes we have:
-
-  minTotal = min1 + min2 + secondTotal / 60;
-
-  //for getting the total Time we have:
-  timeTotal = time1 + time2 + minTotal / 60;
-  // taking the modulus of the seconds
-  secondTotal = secondTotal % 60;
-
-  // taking the modulus of the minutes
-  minTotal = minTotal % 60;
-
-  print("The total time is $timeTotal");
-  print("The total minutes are $minTotal");
-  print("The total seconds we have $secondTotal");
-
-  // OUTPUT Total time is 50 min and 45 seconds
-  // minutes we hav 50
-  // seconds we have 45
-
-// program 21
-
-  // program that print the total numbers and its percentage
-  {
-    final english, urdu, math, computer, physics, islamiat, total, percentage;
-
-    // Marks in english
-    english = 15;
-    // Marks in urdu
-    urdu = 96;
-    // Marks in math
-    math = 99;
-    // Marks in computer
-    computer = 100;
-    // Marks in physics
-    physics = 68;
-    // Marks in islamiat
-    islamiat = 50;
-    total = english + urdu + computer + physics + islamiat + math;
-    // Total marks are:
-    print("Your total marks are : $total");
-    // OUTPUT : Your total marks are 508
-    percentage = (total) / 6;
-
-    print("Percentage is $percentage");
-    //OUTPUT :  84 percentage
-
-  }
-
-// program 22
-
-  // program that print this output:
-  //    *num *sqaure  *cube
-  //     1    1        1
-  //     2    4        8
-  //     3    16       64
-  //     4    16       64
-  //     5    25       125
-
-  print("Numbers  Sqaure  Cube");
-  print("1      ${1 * 1}    ${1 * 1 * 1}");
-  print("2      ${2 * 2}    ${2 * 2 * 2}");
-  print("3      ${3 * 3}    ${3 * 3 * 3}");
-  print("4      ${4 * 4}    ${4 * 4 * 4}");
-  print("5      ${5 * 5}    ${5 * 5 * 5}");
-
-// program 23
-
-// Program get the character from the user and output the ASCII CODE to the user console screen
-  String ch = 'y';
-  print(' ASCII value of ${ch[0]} is ${ch.codeUnitAt(0)}');
-  // OUTPUT IS :   ASCII VALUE OF R IS   121
-
-// program 24
-
-// Program that print the grade , marks , and average
-
-  final name, grade, marks, averageMarks;
-
-  name = "Zain Haider Naqvi ";
-  grade = "A";
-  marks = 1000;
-  averageMarks = 89.0;
-
-  print(
-      "My Name is $name \n I got $marks marks with grade $grade. My average marks are $averageMarks");
-
-  // OUTPUT :
-  // My Name is Zain Haider Naqvi
-  // I got 1000 marks with grade A. My average marks are 89.0.
-
-// program 25
-
-// Program that checks whether you entered character is lowercase or uppercase
-
-  // init... string Charcter
-  {
-    final character = "Syed Zain Haider Naqvi";
-    // Condition is true if the character.toUpperCase is equal to character which user entered
-    if (character[0].toUpperCase() == character[0]) {
-      print("The character  at the index 0 is UpperCase letter");
-    }
-    // if Condition condition remains false then it is lowercase letter
-    else {
-      print("The character at the index 0 is UpperCase letter");
-    }
-
-    // OUTPUT : The character at the index 0 is LowerCase letter
-
-  }
-
-// program 26
-
-// Program to find out the area of the triange's three sides
-
-  {
-    final sideA, sideB, sideC, totalSum, area;
-    print("Enter the Side A ");
-    sideA = 26;
-    print(sideA);
-    print("Enter the Side B ");
-    sideB = 12;
-    print(sideB);
-    print("Enter the Side C ");
-    sideC = 18;
-    print(sideC);
-    // first we have the sum of the 3 sides and divide it by 2 we got
-    totalSum = (sideA + sideB + sideC) / 2.0;
-    print(totalSum);
-    // getting the square root
-    area = sqrt(totalSum *
-        (totalSum - sideA) *
-        (totalSum - sideB) *
-        (totalSum - sideC));
-    print("Area of the triangle is $area");
-
-    // OUTPUT : Area of the triangle is 94.0
-
-  }
-
-// program 27
-
-  // program that check that whether the user input's name is uppercase or lowercase
-  {
-    final name;
-    name = "ZAIN";
-    if (name[0].toUpperCase == name[0] &&
-        name[1].toUpperCase == name[1] &&
-        name[2].toUpperCase == name[2] &&
-        name[3].toUpperCase == name[3]) {
-      print("$name the name is upperCse");
+    // parse the number
+    double number = double.parse(numberInStr);
+// get the modulus to check whether it is positive or not
+    if (number % 2 == 0) {
+      print("The number is even $number");
     } else {
-      print("$name is lowerCase letter");
+      print("The number is odd $number");
     }
   }
+// The number is odd 5
 
-  // extra
+  // program : 8
+
+  // Program that input the year and check it is leap year or not
+  stdout.write("Enter the year  here... \n");
+  // Get the string by the function stdin.readLineSync
+  String? yearInStr = stdin.readLineSync()!;
+
+  // parse the number
+  double year = double.parse(yearInStr);
+// get the modulus to check whether it is positive or not
+  if (year % 4 == 0) {
+    print(" $year is leap year");
+  } else {
+    print(" $year is not a leap year");
+  }
+
+// 2003 is not a leap year
+
+  // program : 9
+
+// program that input salary and grade and adds 50% bonus whom grade is greater than 15 or adds the 25% bonus whom grade is 15 or less and display total salary
+  {
+    double bonus;
+    stdout.write("Enter your salary here...\n");
+    // get the user's salary
+    String? salaryInStr = stdin.readLineSync();
+    stdout.write("Enter your Grade here...\n");
+    // get the user's grade ...
+    String? gradeInStr = stdin.readLineSync();
+
+    // parsing to double integer
+
+    //salary in double digits
+    double salary = double.parse(salaryInStr!);
+    // grade in integer
+    int grade = int.parse(gradeInStr!);
+
+    if (grade > 15) {
+      bonus = salary * 50.0 / 100.0;
+    } else {
+      bonus = salary * 25.0 / 100.0;
+    }
+    // salary and add the bonus
+    salary = salary + bonus;
+    print("Your salary is RS: $salary");
+    // OUTPUT : Enter your salary:16000
+// Enter your grade 17
+// YOur salary is 24000
+  }
+
+  // program : 10
+// Program that check whether the first number is multiple of second or not
 
   {
-    final name;
-    name = "zain haider";
-    for (var i = 0; i < name.length; i++) {
-      if (name[i].toUpperCase == name.length) {
-        print("$name the name is upperCse");
-        break;
-      } else {
-        print("$name is lowerCase letter");
-        break;
-      }
+    stdout.write("Enter The first number...\n");
+    // get the user's number
+    String? firstNumStr = stdin.readLineSync();
+    stdout.write("Enter The SEcond number...\n");
+    // get the user's second number ...
+    String? secondNumStr = stdin.readLineSync();
+
+    // parsing to  integer
+
+    int num1 = int.parse(firstNumStr!);
+    // grade in integer
+    int num2 = int.parse(secondNumStr!);
+
+    if (num1 % num2 == 0) {
+      print("Your number is  multiple of $firstNumStr");
+    } else {
+      print("Your number is not multiple of $firstNumStr");
     }
+    // salary and add the bonus
+
+    // OUTPUT :
+    // Enter your number: 12
+    // Enter your number: 4
+//Your number is multiple of 4
+
   }
+  // program : 11
+
+// Program check which number is smaller or which is largest in 5 numbers
+
+  stdout.write("Enter The five number below ...\n");
+  // get the user's numbers
+  String? firstNumStr = stdin.readLineSync();
+  String? secondNumStr = stdin.readLineSync();
+  String? thirdNumStr = stdin.readLineSync();
+  String? fourNumStr = stdin.readLineSync();
+  String? fifthNumStr = stdin.readLineSync();
+
+  // parsing to  integer
+
+  int firstNum = int.parse(firstNumStr!);
+  int secondNum = int.parse(secondNumStr!);
+  int thirdNum = int.parse(thirdNumStr!);
+  int forthNum = int.parse(fourNumStr!);
+  int fifthNum = int.parse(fifthNumStr!);
+  // init... minimum or maximum
+  int minimum, maximum;
+
+  minimum = maximum = firstNum;
+// for minimum we got
+  if (secondNum < minimum) minimum = secondNum;
+  if (thirdNum < minimum) minimum = thirdNum;
+  if (forthNum < minimum) minimum = forthNum;
+  if (fifthNum < minimum) minimum = fifthNum;
+// for maximum we got
+  if (secondNum > maximum) maximum = secondNum;
+  if (thirdNum > maximum) maximum = thirdNum;
+  if (forthNum > maximum) maximum = forthNum;
+  if (fifthNum > maximum) maximum = fifthNum;
+
+  print("The largest number is $maximum");
+  print("The smallest number is $minimum");
+  // OUTPUT : Enter the five digits here....
+
+  // Enter your number: 12
+  // Enter your number: 78
+  // Enter your number: 90
+  // Enter your number: 60
+  // Enter your number: 4
+
+  // The largest number is 90
+  // The smallest number is 4
 }
