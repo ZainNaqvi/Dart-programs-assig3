@@ -1,7 +1,25 @@
 import 'dart:io';
 
 main (){
-  // Program that input two numbers from the user using for loop. and display the greater common divisor 
+  // program : 1 
+    // Program that input number from the user using for loop. if hte number is greater than is 0, it is displayed and the next number and the next number is input. Program exits when the number is negative or 0
+
+  // get the user's number string and to convert it to number integer 
+
+  for (int i = 1; i<=5;i++){
+    stdout.write("Enter the number here...\n");
+
+  int number = int.parse(stdin.readLineSync()!);
+   if(number <= 0){
+      break;
+   }
+  }
+
+// OUTPUT
+// 3 ,4 ,5 , exit on -3
+
+  // program : 2 
+    // Program that input two numbers from the user using for loop. and display the greater common divisor 
 
 
   // get the user's number string and to convert it to number integer 
@@ -21,7 +39,7 @@ for(divisor= divisor;divisor>= 1 ; divisor--){
   }
 }
 print("GCD of $number1 and $number2 is: $divisor");
-// OUTPUT
+// OUTPUT 28,39,is 3
 
 
 }
