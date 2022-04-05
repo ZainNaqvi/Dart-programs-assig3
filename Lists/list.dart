@@ -418,4 +418,52 @@ main() {
 // in one statement
 // print(a.difference(b).union(b.difference(a)));
   }
+  // Program : 15
+  {
+    import 'dart:io';
+
+main() {
+  var restaurants = [
+    {
+      'name': 'Pizza Mario',
+      'cuisine': 'Italian',
+      'ratings': [4.0, 3.5, 4.5],
+    },
+    {
+      'name': 'Chez Anne',
+      'cuisine': 'French',
+      'ratings': [5.0, 4.5, 4.0],
+    },
+    {
+      'name': 'Navaratna',
+      'cuisine': 'Indian',
+      'ratings': [4.0, 4.5, 4.0],
+    },
+  ];
+  for (var item in restaurants) {
+    var ratings = item['ratings'] as List<dynamic>;
+    var total = 0.0;
+    for (var item in ratings) {
+      total = total + item;
+    }
+    var avgRatings = total / item.length;
+    item['avgRating'] = "$avgRatings";
+  }
+  print(restaurants);
+  me();
+}
+
+void me() {
+  var map = [
+    {"name": "zain"}
+  ];
+  for (var item in map) {
+    item['class'] = "7";
+    print(item);
+  }
+}
+
+  }
+  
+  
 }
