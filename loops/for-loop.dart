@@ -265,4 +265,89 @@ void main() {
 // Enter the range of the x.
 // 5
 // Sum: 1.75
+  
+
+   // CONTINUE STATEMENT BY USING THE FOR LOOP
+  // Program : 12
+
+  //Program that inputs the number by the user and output to it that number but if the user enter the negative number then contiue it without printing to the terminal
+
+  for (var i = 0; i < 5; i++) {
+    stdout.write("Enter the number.\n");
+    String userNumberStr = stdin.readLineSync()!;
+    // parse to int
+    int number = int.parse(userNumberStr);
+    // if the number is lessthan 0 then continue it without output to the terminal
+    if (number < 0) continue;
+    print("Your enterd $number");
+  }
+//   OUTPUT :
+//   Enter the number.
+// 4
+// Your enterd 4
+// Enter the number.
+// 6
+// Your enterd 6
+// Enter the number.
+// 4
+// Your enterd 4
+// Enter the number.
+// -6
+// Enter the number.
+// 4
+// Your enterd 4
+
+  // Program : 13
+
+  int sum = 0;
+  // Program that output the odd numbers sum skipping the even numbers
+  for (var i = 1; i < 100; i = i + 2) {
+    sum = sum + i;
+  }
+  print("Sum : $sum");
+  // OUTPUT:
+  // Sum : 2500
+  
+  
+  
+  // program : 13
+    // Program that input number from the user using for loop. if hte number is greater than is 0, it is displayed and the next number and the next number is input. Program exits when the number is negative or 0
+
+  // get the user's number string and to convert it to number integer 
+
+  for (int i = 1; i<=5;i++){
+    stdout.write("Enter the number here...\n");
+
+  int number = int.parse(stdin.readLineSync()!);
+   if(number <= 0){
+      break;
+   }
+  }
+
+// OUTPUT
+// 3 ,4 ,5 , exit on -3
+
+  // program : 14 
+    // Program that input two numbers from the user using for loop. and display the greater common divisor 
+
+
+  // get the user's number string and to convert it to number integer 
+    stdout.write("Enter the number here...\n");
+
+  int number1 = int.parse(stdin.readLineSync()!);
+  // Second number 
+    stdout.write("Enter the Second number here...\n");
+
+  int number2 = int.parse(stdin.readLineSync()!);
+
+  int divisor = (number1 < number2) ? number1:number2;
+for(divisor= divisor;divisor>= 1 ; divisor--){
+  if (number1 % divisor==0 && number2 % divisor==0){
+
+    break;
+  }
+}
+print("GCD of $number1 and $number2 is: $divisor");
+// OUTPUT 28,39,is 3
+
 }
