@@ -1,6 +1,7 @@
 import 'dart:io';
 
 void main() {
+  *********************CONDITIONAL STATEMENTS*******************************
   // program : 1
 
   // program that input the user's number of the subject and the check whether he is passed or not
